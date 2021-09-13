@@ -5,8 +5,11 @@
 import 'dart:async';
 
 import 'package:angular/angular.dart';
-import 'package:angular/experimental.dart' show changeDetectionLink;
+import 'package:angular/experimental.dart' show changeDetectionLink, typeToFactory;
 import 'package:angular_components/model/ui/has_renderer.dart';
+import 'package:angular/src/di/injector.dart';
+import 'package:angular/src/utilities.dart';
+
 
 /// Dynamically renders another component, setting the [value] field on the
 /// dynamic component if it implements [RendersValue] (and not if the component
@@ -143,5 +146,45 @@ class DynamicComponent implements OnDestroy, AfterChanges {
         }
       });
     }
+  }
+}
+
+class SlowComponentLoader {
+  final ComponentLoader _loader;
+
+  const SlowComponentLoader(this._loader);
+
+  /// Creates and loads a new instance of the component defined by [type].
+  ///
+  /// See [ComponentLoader.loadDetached] for a similar example.
+  Future<ComponentRef<T>> load<T>(Type type, Injector injector) {
+    // Purposefully don't use async/await to retain timing.
+    final factoryFuture = Future.value(typeToFactory(type));
+    return factoryFuture.then((component) {
+      final reference = _loader.loadDetached(component, injector: injector);
+      reference.onDestroy(() {
+        reference.location.remove();
+      });
+      return unsafeCast(reference);
+    });
+  }
+
+  /// Creates and loads a new instance of component [type] next to [location].
+  ///
+  /// See [ComponentLoader.loadNextToLocation] for a similar example.
+  Future<ComponentRef<T>> loadNextToLocation<T>(
+      Type type,
+      ViewContainerRef location, [
+        Injector injector,
+      ]) {
+    // Purposefully don't use async/await to retain timing.
+    final factoryFuture = Future.value(typeToFactory(type));
+    return factoryFuture.then((component) {
+      return _loader.loadNextToLocation(
+        unsafeCast(component),
+        location,
+        injector: injector,
+      );
+    });
   }
 }

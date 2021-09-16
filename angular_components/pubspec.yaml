@@ -20,8 +20,8 @@ dependencies:
       path: angular_forms
       ref: update_pubspec
   async: ^2.1.0
-  build: ^2.0.0
-  build_config: ^1.0.0
+  build: ^1.6.3
+  build_config: ^0.4.0
   built_collection: ^5.0.0
   collection: ^1.14.10
   fixnum: ^1.0.0
@@ -32,7 +32,7 @@ dependencies:
   observable: ^0.23.0
   protobuf: ^2.0.0
   quiver: ^3.0.0
-  sass_builder: ^2.0.2
+  sass_builder: ^2.0.0
 
 dev_dependencies:
   path: ^1.6.1

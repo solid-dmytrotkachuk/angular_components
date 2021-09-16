@@ -199,7 +199,7 @@ $button-disabled-background-dark: rgba(255, 255, 255, $mat-divider-opacity);
 }
 
 @mixin fab-size($size) {
-  border-radius: $size / 2;
+  border-radius: $size * 0.5;
 
   .content {
     height: $size;
@@ -226,7 +226,7 @@ $button-disabled-background-dark: rgba(255, 255, 255, $mat-divider-opacity);
 
 // Allow customized size and icon-size on fab button.
 @mixin fab-custom-size($size, $icon-size: $fab-icon-size) {
-  border-radius: $size / 2;
+  border-radius: $size * 0.5;
 
   ::ng-deep {
     .content.content {

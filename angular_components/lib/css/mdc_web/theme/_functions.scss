@@ -20,6 +20,8 @@
 // THE SOFTWARE.
 //
 
+@use "sass:math";
+
 @import "./constants";
 
 // Calculate the luminance for a color.
@@ -38,7 +40,7 @@
   $backLum: mdc-theme-luminance($back) + .05;
   $foreLum: mdc-theme-luminance($front) + .05;
 
-  @return max($backLum, $foreLum) / min($backLum, $foreLum);
+  @return math.div(max($backLum, $foreLum), min($backLum, $foreLum));
 }
 
 // Determine whether the color is "light" or "dark".

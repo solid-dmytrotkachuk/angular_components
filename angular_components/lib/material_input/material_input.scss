@@ -261,7 +261,7 @@ input[type=number] {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: $mat-grid / 2;
+  margin-top: $mat-grid * 0.5;
 }
 
 .counter,

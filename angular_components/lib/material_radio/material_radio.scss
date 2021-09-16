@@ -63,7 +63,7 @@ $ripple-top: -$mat-grid;
   &.focus::after,
   .ripple {
     $size: $mat-grid * 5;
-    border-radius: $size / 2;
+    border-radius: $size * 0.5;
     height: $size;
     left: $ripple-left;
     position: absolute;

@@ -44,7 +44,7 @@
     .progress-container,
     .active-progress,
     .secondary-progress {
-      border-radius: $height / 2;
+      border-radius: $height * 0.5;
     }
   }
 }

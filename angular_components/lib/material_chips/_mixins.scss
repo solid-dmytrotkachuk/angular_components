@@ -69,7 +69,7 @@ $left-icon-width: $mat-grid * 4;
         margin-left: 0;
         // The margin between chip content and icon should be 8px, so need to
         // move right margin -4px to account for content left-padding (12px).
-        margin-right: -($mat-grid / 2);
+        margin-right: -($mat-grid * 0.5);
         min-width: $left-icon-width;
         padding: 0;
         width: $left-icon-width;
@@ -204,8 +204,8 @@ $emphasis-selected-bg-color: $mat-blue-900;
 @mixin chips-dense-theme() {
   ::ng-deep material-chip {
     height: $mat-grid * 3;
-    border-radius: ($mat-grid * 3) / 2;
-    margin: $mat-grid-type / 2 $mat-grid-type;
+    border-radius: ($mat-grid * 3) * 0.5;
+    margin: $mat-grid-type * 0.5 $mat-grid-type;
 
     .content {
       font-size: $mat-font-size-body;

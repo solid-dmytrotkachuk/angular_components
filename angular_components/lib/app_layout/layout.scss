@@ -14,7 +14,7 @@
 $mat-toolbar-mobile-breakpoint: 599px;
 $mat-drawer-border: 1px solid $mat-border-light;
 // Desktop spec calls for 24px margins have each element contribute half.
-$mat-desktop-drawer-margin: 3 * $mat-grid / 2;
+$mat-desktop-drawer-margin: 3 * $mat-grid * 0.5;
 // Mobile spec calls for 16px margins have each element contribute half.
 $mat-mobile-drawer-margin: $mat-grid;
 

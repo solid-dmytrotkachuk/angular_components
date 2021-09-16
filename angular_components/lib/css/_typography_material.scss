@@ -46,7 +46,7 @@ $mat-font-leading-caption: 20px;
 
 // Converts tracking to letter-spacing.
 @function font-tracking($tracking) {
-  @return ($tracking / 1000) * 1em;
+  @return ($tracking * 0.001) * 1em;
 }
 
 // Prevents text from wrapping.

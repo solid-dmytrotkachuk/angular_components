@@ -69,14 +69,14 @@ $error-text-color: #d34336;
 @mixin icon-focus-highlight-hack {
   // First let's set a smaller size on the glyph for the purposes of layout.
   // The icon will still be visible thanks to a visible overflow.
-  $hacked-height: $icon-size / 2;
+  $hacked-height: $icon-size * 0.5;
   height: $hacked-height;
 
   ::ng-deep i.glyph-i {
     // Finally let's adjust the position of the glyph itself to compensate for
     // the smaller size of the glyph element. (This assumes center alignment)
     position: relative;
-    top: -($icon-size - $hacked-height) / 2;
+    top: -($icon-size - $hacked-height) * 0.5;
   }
 }
 
@@ -84,6 +84,6 @@ $error-text-color: #d34336;
   @include icon-focus-highlight-hack;
 
   opacity: $mat-icon-opacity;
-  margin-top: -$icon-size / 2;
-  margin-bottom: -$icon-size / 2;
+  margin-top: -$icon-size * 0.5;
+  margin-bottom: -$icon-size * 0.5;
 }

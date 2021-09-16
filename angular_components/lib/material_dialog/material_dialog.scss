@@ -9,7 +9,7 @@
 :host {
   @include shadow-elevation(24);
   background: $mat-white;
-  border-radius: $mat-grid-type / 2;
+  border-radius: $mat-grid-type * 0.5;
   display: block;
   height: auto;
   max-height: 60vh;

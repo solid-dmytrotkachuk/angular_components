@@ -141,7 +141,7 @@ $top-layer-index: 0;
       left: $cal-highlight-margin;
       right: $cal-highlight-margin;
       bottom: $cal-highlight-margin;
-      border-radius: $month-height / 2;
+      border-radius: $month-height * 0.5;
       z-index: $mid-layer-index;
     }
 

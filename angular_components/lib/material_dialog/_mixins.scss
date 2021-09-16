@@ -92,7 +92,7 @@
   ::ng-deep h1,
   ::ng-deep h3 {
     color: $mat-white;
-    margin-bottom: $mat-grid / 2;
+    margin-bottom: $mat-grid * 0.5;
   }
 
   ::ng-deep p {
